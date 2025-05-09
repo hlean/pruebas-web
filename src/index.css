@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 3.9%;
+  --primary: 220 100% 14%;  /* darkBlue: #001F45 */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 349 71% 36%;  /* terracotta: #C84630 */ 
+  --secondary-foreground: 0 0% 98%;
+  --muted: 19 14% 72%;  /* warmGray: #C0B8AB */
+  --muted-foreground: 0 0% 45.1%;
+  --accent: 192 30% 93%;  /* lightBlue: #E9F2EF */
+  --accent-foreground: 220 100% 14%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 220 100% 14%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 220 100% 14%;
+  --foreground: 0 0% 98%;
+  --card: 220 90% 20%;
+  --card-foreground: 0 0% 98%;
+  --popover: 220 90% 20%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 220 100% 14%;
+  --secondary: 349 71% 36%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 19 14% 30%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 220 90% 25%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 220 80% 30%;
+  --input: 220 80% 30%;
+  --ring: 0 0% 83.1%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+  h1 {
+    @apply text-4xl leading-tight lg:text-5xl;
+  }
+  h2 {
+    @apply text-3xl leading-tight lg:text-4xl;
+  }
+  h3 {
+    @apply text-2xl leading-tight;
+  }
+  
+  .container {
+    @apply px-4 mx-auto;
+    max-width: 1280px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-terracotta text-white hover:bg-darkRed transition-colors duration-300 font-medium px-4 py-2 rounded-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-darkBlue text-white hover:bg-opacity-90 transition-colors duration-300 font-medium px-4 py-2 rounded-md;
+  }
+  
+  .section {
+    @apply py-16;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg;
+  }
+}
